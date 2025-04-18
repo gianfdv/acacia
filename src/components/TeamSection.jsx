@@ -1,4 +1,5 @@
 import detailsImg from "../assets/details.jpg";
+import { FaInstagram} from "react-icons/fa";
 
 const TeamSection = () => {
   return (
