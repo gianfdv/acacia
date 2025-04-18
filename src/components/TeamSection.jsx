@@ -1,5 +1,5 @@
 import detailsImg from "../assets/details.jpg";
-import { FaInstagram} from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaWhatsapp} from "react-icons/fa";
 
 const TeamSection = () => {
   return (
@@ -48,13 +48,31 @@ const TeamSection = () => {
             <div className="sm:w-1/2 flex flex-col items-center">
                 <h1 className="p-2 text-3xl">Mariana Carmona</h1>
                 <p className="text-sm text-justify p-3">Our Wedding Planner has over 13 years of experience bringing love stories to life. She specializes in creating seamless, magical experiences for couples dreaming of saying “I do” in breathtaking locations. With a personalized approach and an eye for detail, she ensures every moment is unforgettable—from the first look to the last dance.</p>
-                <a 
+                
+                <div className="flex flex-row gap-4 mt-4">
+  <a 
     href="https://www.instagram.com/weddingsbymariana" 
     target="_blank" 
     rel="noopener noreferrer"
   >
     <FaInstagram className="text-2xl hover:text-[#0b3425] transition-colors duration-300" />
   </a>
+  <a 
+    href="https://www.facebook.com/marianaweddingsandevents/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <FaFacebook className="text-2xl hover:text-[#0b3425] transition-colors duration-300" />
+  </a>
+  <a 
+    href="https://wa.me/+50684905692" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <FaWhatsapp className="text-2xl hover:text-[#0b3425] transition-colors duration-300" />
+  </a>
+</div>
+
             </div>
             <img className="sm:w-1/2 h-80 object-cover rounded-lg" src={detailsImg} />
             </div>
