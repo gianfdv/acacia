@@ -17,7 +17,7 @@ const TeamSection = () => {
             <img className="sm:w-1/2 h-80 object-cover rounded-lg" src={detailsImg} />
             <div className="sm:w-1/2 flex flex-col items-center">
                 <h1 className="p-2 text-3xl">Yesenia Víquez</h1>
-                <p className="text-sm text-justify p-3">Co-founder of Acacia Flowers & Events, known for her creativity and dedication to outstanding service. She ensures that every client receives exceptional attention by identifying and understanding their individual preferences. Her personalized approach reflects a genuine commitment to excellence and client satisfaction.</p>
+                <p className="text-sm text-justify p-3">Co-founder of Acacia Flowers & Events and Lawyer by profession, known for her creativity and dedication to outstanding service. She ensures that every client receives exceptional attention by identifying and understanding their individual preferences. Her personalized approach reflects a genuine commitment to excellence and client satisfaction.</p>
             </div>
             </div>
         </div>
