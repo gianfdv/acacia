@@ -1,4 +1,5 @@
 import detailsImg from "../assets/details.jpg";
+import marianaImg from "../assets/mariana.jpeg";
 import { FaInstagram, FaFacebook, FaWhatsapp} from "react-icons/fa";
 
 const TeamSection = () => {
@@ -74,7 +75,7 @@ const TeamSection = () => {
 </div>
 
             </div>
-            <img className="sm:w-1/2 h-80 object-cover rounded-lg" src={detailsImg} />
+            <img className="sm:w-1/2 h-80 object-cover rounded-lg" src={marianaImg} />
             </div>
         </div>
 
