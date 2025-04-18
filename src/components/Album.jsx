@@ -53,11 +53,15 @@ const Album = () => {
       )}
 
       {/* Image Gallery */}
-      <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
-        {imageList.map((src, index) => (
-          <LazyImage key={index} src={src} alt={`Photo ${index + 1}`} />
-        ))}
-      </div>
+      {imageList.length === 0 ? (
+  <p className="text-center text-sm text-gray-500 mt-10">Loading photos...</p>
+) : (
+  <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
+    {imageList.map((src, index) => (
+      <LazyImage key={index} src={src} alt={`Photo ${index + 1}`} />
+    ))}
+  </div>
+)}
     </div>
   );
 };
