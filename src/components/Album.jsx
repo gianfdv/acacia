@@ -9,14 +9,24 @@ const Album = () => {
   const [imageList, setImageList] = useState([]);
 
   useEffect(() => {
-    if (!album || !album.count) return;
-
-    const list = Array.from({ length: album.count }, (_, i) => {
-      return `https://res.cloudinary.com/dxvkewdcn/image/upload/albums/${albumName}/image${i + 1}.jpg`;
-    });
-
-    setImageList(list);
-  }, [albumName, album]);
+    const fetchImages = async () => {
+      try {
+        const res = await fetch(`/albums-data/${albumName}.json`);
+        const data = await res.json();
+  
+        const urls = data.map(name =>
+          `https://res.cloudinary.com/dxvkewdcn/image/upload/albums/${albumName}/${name}`
+        );
+  
+        setImageList(urls);
+      } catch (err) {
+        console.error("Could not load album JSON:", err);
+        setImageList([]); // fallback or show message
+      }
+    };
+  
+    fetchImages();
+  }, [albumName]);
 
   return (
     <div className="container mx-auto mt-10 px-6">
