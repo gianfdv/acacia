@@ -39,7 +39,8 @@ const DynamicImage = ({ albumFolder, title }) => {
         return;
       }
 
-      const cloudSrc = `https://res.cloudinary.com/dxvkewdcn/image/upload/albums/${albumFolder}/image1.${extensions[index]}`;
+      // Add ?v=2 to force cache refresh when image1 is updated in Cloudinary
+      const cloudSrc = `https://res.cloudinary.com/dxvkewdcn/image/upload/albums/${albumFolder}/image1.${extensions[index]}?v=2`;
       const img = new Image();
       img.src = cloudSrc;
 
@@ -64,3 +65,4 @@ const DynamicImage = ({ albumFolder, title }) => {
 };
 
 export default GalleriesSection;
+
