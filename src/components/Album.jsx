@@ -6,35 +6,17 @@ const Album = () => {
   const { albumName } = useParams();
   const album = albums.find(a => a.link === `/album/${albumName}`);
 
-  const [imageCount, setImageCount] = useState(0);
-  const [existingImages, setExistingImages] = useState([]);
+  const [imageList, setImageList] = useState([]);
 
-  // Supported image extensions
-  const extensions = ["jpg", "jpeg", "png"];
-
-  // Dynamically determine existing images
   useEffect(() => {
-    let foundImages = [];
-  
-    for (let i = 1; i <= 100; i++) {
-      let found = false;
-  
-      for (const ext of extensions) {
-        const cloudSrc = `https://res.cloudinary.com/dxvkewdcn/image/upload/albums/${albumName}/image${i}.${ext}`;
-        const img = new Image();
-  
-        img.src = cloudSrc;
-        img.onload = () => {
-          if (!found) {
-            foundImages.push(cloudSrc);
-            setExistingImages([...foundImages]);
-            setImageCount(foundImages.length);
-            found = true;
-          }
-        };
-      }
-    }
-  }, [albumName]);
+    if (!album || !album.count) return;
+
+    const list = Array.from({ length: album.count }, (_, i) => {
+      return `https://res.cloudinary.com/dxvkewdcn/image/upload/albums/${albumName}/image${i + 1}.jpg`;
+    });
+
+    setImageList(list);
+  }, [albumName, album]);
 
   return (
     <div className="container mx-auto mt-10 px-6">
@@ -62,7 +44,7 @@ const Album = () => {
 
       {/* Image Gallery */}
       <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
-        {existingImages.map((src, index) => (
+        {imageList.map((src, index) => (
           <LazyImage key={index} src={src} alt={`Photo ${index + 1}`} />
         ))}
       </div>
