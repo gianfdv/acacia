@@ -1,55 +1,67 @@
+import { albums } from "../constants";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const DynamicImage = ({ albumFolder, title }) => {
-  const [src, setSrc] = useState("");
-  const [blurSrc, setBlurSrc] = useState("");
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    // Prevent code from running during SSR
-    if (typeof window === "undefined") return;
-
-    const fullRes = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_800,q_auto,f_auto/albums/${albumFolder}/image1.jpg`;
-    const tinyBlur = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_20,q_1,f_auto/albums/${albumFolder}/image1.jpg`;
-
-    const img = new Image();
-    img.src = fullRes;
-
-    img.onload = () => {
-      setBlurSrc(tinyBlur);
-      setSrc(fullRes);
-    };
-
-    img.onerror = () => {
-      setSrc("/placeholder.jpg");
-      setBlurSrc("/placeholder.jpg");
-    };
-  }, [albumFolder]);
-
+const GalleriesSection = () => {
   return (
-    <div className="sm:w-1/2 h-[300px] overflow-hidden rounded-lg relative">
-      {blurSrc && (
-        <img
-          src={blurSrc}
-          alt=""
-          className={`absolute top-0 left-0 w-full h-full object-cover blur-lg scale-110 transition-opacity duration-300 ${
-            isLoaded ? "opacity-0" : "opacity-100"
-          }`}
-        />
-      )}
-      {src && (
-        <img
-          src={src}
-          alt={title}
-          className="w-full h-full object-cover rounded-lg transition-opacity duration-300"
-          onLoad={() => setIsLoaded(true)}
-          loading="lazy"
-          decoding="async"
-          fetchpriority="low"
-        />
-      )}
+    <div className="mt-10 flex flex-wrap justify-center px-7">
+      {albums.map((album, index) => (
+        <Link to={album.link} key={index} className="w-full sm:w-1/2 lg:w-1/2 p-2">
+          <div className="p-6 rounded-xl flex flex-col sm:flex-row items-center text-center">
+            {Math.floor(index / 2) % 2 === 0 ? (
+              <>
+                <DynamicImage albumFolder={album.folder} title={album.title} />
+                <h1 className="sm:w-1/2 p-2 text-3xl">{album.title}</h1>
+              </>
+            ) : (
+              <>
+                <h1 className="sm:w-1/2 p-2 text-3xl hover:text-[#0b3425]">{album.title}</h1>
+                <DynamicImage albumFolder={album.folder} title={album.title} />
+              </>
+            )}
+          </div>
+        </Link>
+      ))}
     </div>
   );
 };
 
-export default DynamicImage;
+const DynamicImage = ({ albumFolder, title }) => {
+  const [src, setSrc] = useState("");
+  const extensions = ["jpg", "jpeg", "png"];
+
+  useEffect(() => {
+    let index = 0;
+
+    const tryNext = () => {
+      if (index >= extensions.length) {
+        setSrc("/placeholder.jpg"); // fallback if no valid image
+        return;
+      }
+
+      // ✅ Added Cloudinary transformation for faster images
+      const cloudSrc = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_800,q_auto,f_auto/albums/${albumFolder}/image1.${extensions[index]}`;
+      const img = new Image();
+      img.src = cloudSrc;
+
+      img.onload = () => setSrc(cloudSrc);
+      img.onerror = () => {
+        index++;
+        tryNext();
+      };
+    };
+
+    tryNext();
+  }, [albumFolder]);
+
+  return (
+    <img
+      className="sm:w-1/2 h-[300px] object-cover rounded-lg"
+      src={src}
+      alt={title}
+      loading="lazy"
+    />
+  );
+};
+
+export default GalleriesSection;
