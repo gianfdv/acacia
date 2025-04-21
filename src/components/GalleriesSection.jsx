@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 
 const DynamicImage = ({ albumFolder, title }) => {
-  const [src, setSrc] = useState(null);
-  const [blurSrc, setBlurSrc] = useState(null);
+  const [src, setSrc] = useState("");
+  const [blurSrc, setBlurSrc] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    // Prevent code from running during SSR
+    if (typeof window === "undefined") return;
+
     const fullRes = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_800,q_auto,f_auto/albums/${albumFolder}/image1.jpg`;
     const tinyBlur = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_20,q_1,f_auto/albums/${albumFolder}/image1.jpg`;
 
@@ -48,3 +51,5 @@ const DynamicImage = ({ albumFolder, title }) => {
     </div>
   );
 };
+
+export default DynamicImage;
