@@ -4,18 +4,14 @@ const DynamicImage = ({ albumFolder, title }) => {
   const [src, setSrc] = useState(null);
   const [blurSrc, setBlurSrc] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-
   const extensions = ["jpg", "jpeg", "png"];
 
   useEffect(() => {
     let index = 0;
+    let isResolved = false;
 
     const tryNext = () => {
-      if (index >= extensions.length) {
-        setSrc("/placeholder.jpg");
-        setBlurSrc("/placeholder.jpg");
-        return;
-      }
+      if (index >= extensions.length || isResolved) return;
 
       const ext = extensions[index];
       const fullRes = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_800,q_auto,f_auto/albums/${albumFolder}/image1.${ext}`;
@@ -25,8 +21,11 @@ const DynamicImage = ({ albumFolder, title }) => {
       img.src = fullRes;
 
       img.onload = () => {
-        setSrc(fullRes);
-        setBlurSrc(tinyBlur);
+        if (!isResolved) {
+          setSrc(fullRes);
+          setBlurSrc(tinyBlur);
+          isResolved = true;
+        }
       };
 
       img.onerror = () => {
