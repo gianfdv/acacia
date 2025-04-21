@@ -39,7 +39,8 @@ const DynamicImage = ({ albumFolder, title }) => {
         return;
       }
 
-      const cloudSrc = `https://res.cloudinary.com/dxvkewdcn/image/upload/albums/${albumFolder}/image1.${extensions[index]}`;
+      // ✅ Added Cloudinary transformation for faster images
+      const cloudSrc = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_800,q_auto,f_auto/albums/${albumFolder}/image1.${extensions[index]}`;
       const img = new Image();
       img.src = cloudSrc;
 
