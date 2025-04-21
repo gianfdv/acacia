@@ -4,37 +4,23 @@ const DynamicImage = ({ albumFolder, title }) => {
   const [src, setSrc] = useState(null);
   const [blurSrc, setBlurSrc] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const extensions = ["jpg", "jpeg", "png"];
 
   useEffect(() => {
-    let index = 0;
-    let isResolved = false;
+    const fullRes = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_800,q_auto,f_auto/albums/${albumFolder}/image1.jpg`;
+    const tinyBlur = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_20,q_1,f_auto/albums/${albumFolder}/image1.jpg`;
 
-    const tryNext = () => {
-      if (index >= extensions.length || isResolved) return;
+    const img = new Image();
+    img.src = fullRes;
 
-      const ext = extensions[index];
-      const fullRes = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_800,q_auto,f_auto/albums/${albumFolder}/image1.${ext}`;
-      const tinyBlur = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_20,q_1,f_auto/albums/${albumFolder}/image1.${ext}`;
-
-      const img = new Image();
-      img.src = fullRes;
-
-      img.onload = () => {
-        if (!isResolved) {
-          setSrc(fullRes);
-          setBlurSrc(tinyBlur);
-          isResolved = true;
-        }
-      };
-
-      img.onerror = () => {
-        index++;
-        tryNext();
-      };
+    img.onload = () => {
+      setBlurSrc(tinyBlur);
+      setSrc(fullRes);
     };
 
-    tryNext();
+    img.onerror = () => {
+      setSrc("/placeholder.jpg");
+      setBlurSrc("/placeholder.jpg");
+    };
   }, [albumFolder]);
 
   return (
@@ -62,5 +48,3 @@ const DynamicImage = ({ albumFolder, title }) => {
     </div>
   );
 };
-
-export default DynamicImage;
