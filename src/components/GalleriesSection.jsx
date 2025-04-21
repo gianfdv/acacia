@@ -1,7 +1,9 @@
+import { useState, useEffect } from "react";
+
 const DynamicImage = ({ albumFolder, title }) => {
   const [src, setSrc] = useState("");
-  const [isLoaded, setIsLoaded] = useState(false);
   const [blurSrc, setBlurSrc] = useState("");
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const extensions = ["jpg", "jpeg", "png"];
 
@@ -19,14 +21,15 @@ const DynamicImage = ({ albumFolder, title }) => {
       const fullRes = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_800,q_auto,f_auto/albums/${albumFolder}/image1.${ext}`;
       const tinyBlur = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_20,q_1,f_auto/albums/${albumFolder}/image1.${ext}`;
 
-      const testImg = new Image();
-      testImg.src = fullRes;
+      const img = new window.Image();
+      img.src = fullRes;
 
-      testImg.onload = () => {
+      img.onload = () => {
         setBlurSrc(tinyBlur);
         setSrc(fullRes);
       };
-      testImg.onerror = () => {
+
+      img.onerror = () => {
         index++;
         tryNext();
       };
@@ -37,20 +40,28 @@ const DynamicImage = ({ albumFolder, title }) => {
 
   return (
     <div className="sm:w-1/2 h-[300px] overflow-hidden rounded-lg relative">
-      <img
-        src={blurSrc}
-        alt=""
-        className={`absolute top-0 left-0 w-full h-full object-cover blur-lg scale-110 transition-opacity duration-300 ${isLoaded ? "opacity-0" : "opacity-100"}`}
-      />
-      <img
-        src={src}
-        alt={title}
-        className="w-full h-full object-cover rounded-lg transition-opacity duration-300"
-        onLoad={() => setIsLoaded(true)}
-        loading="lazy"
-        decoding="async"
-        fetchpriority="low"
-      />
+      {blurSrc && (
+        <img
+          src={blurSrc}
+          alt=""
+          className={`absolute top-0 left-0 w-full h-full object-cover blur-lg scale-110 transition-opacity duration-300 ${
+            isLoaded ? "opacity-0" : "opacity-100"
+          }`}
+        />
+      )}
+      {src && (
+        <img
+          src={src}
+          alt={title}
+          className="w-full h-full object-cover rounded-lg transition-opacity duration-300"
+          onLoad={() => setIsLoaded(true)}
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+        />
+      )}
     </div>
   );
 };
+
+export default DynamicImage;
