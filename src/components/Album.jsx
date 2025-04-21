@@ -13,18 +13,18 @@ const Album = () => {
       try {
         const res = await fetch(`/albums-data/${albumName}.json`);
         const data = await res.json();
-  
+
         const urls = data.map(name =>
-          `https://res.cloudinary.com/dxvkewdcn/image/upload/albums/${albumName}/${name}`
+          `https://res.cloudinary.com/dxvkewdcn/image/upload/w_1000,q_auto,f_auto/albums/${albumName}/${name}`
         );
-  
+
         setImageList(urls);
       } catch (err) {
         console.error("Could not load album JSON:", err);
-        setImageList([]); // fallback or show message
+        setImageList([]);
       }
     };
-  
+
     fetchImages();
   }, [albumName]);
 
@@ -33,7 +33,6 @@ const Album = () => {
       <h1 className="text-4xl font-bold text-center mb-0.5">{album?.title.replace("-", " & ")}</h1>
       {album?.note && <p className="text-center text-lg text-black mb-1">{album.note}</p>}
       
-      {/* Photographer Info */}
       {album?.photographer && (
         <p className="text-center text-xs text-neutral-900 mb-6">
           Photos by{" "}
@@ -52,21 +51,19 @@ const Album = () => {
         </p>
       )}
 
-      {/* Image Gallery */}
       {imageList.length === 0 ? (
-  <p className="text-center text-sm text-gray-500 mt-10">Loading photos...</p>
-) : (
-  <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
-    {imageList.map((src, index) => (
-      <LazyImage key={index} src={src} alt={`Photo ${index + 1}`} />
-    ))}
-  </div>
-)}
+        <p className="text-center text-sm text-gray-500 mt-10">Loading photos...</p>
+      ) : (
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
+          {imageList.map((src, index) => (
+            <LazyImage key={index} src={src} alt={`Photo ${index + 1}`} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
-// Lazy Loading Image Component (Keeps Layout)
 const LazyImage = ({ src, alt }) => {
   const [loaded, setLoaded] = useState(false);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -98,3 +95,4 @@ const LazyImage = ({ src, alt }) => {
 };
 
 export default Album;
+
