@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
 const DynamicImage = ({ albumFolder, title }) => {
-  const [src, setSrc] = useState("");
-  const [blurSrc, setBlurSrc] = useState("");
+  const [src, setSrc] = useState(null);
+  const [blurSrc, setBlurSrc] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   const extensions = ["jpg", "jpeg", "png"];
@@ -21,12 +21,12 @@ const DynamicImage = ({ albumFolder, title }) => {
       const fullRes = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_800,q_auto,f_auto/albums/${albumFolder}/image1.${ext}`;
       const tinyBlur = `https://res.cloudinary.com/dxvkewdcn/image/upload/w_20,q_1,f_auto/albums/${albumFolder}/image1.${ext}`;
 
-      const img = new window.Image();
+      const img = new Image();
       img.src = fullRes;
 
       img.onload = () => {
-        setBlurSrc(tinyBlur);
         setSrc(fullRes);
+        setBlurSrc(tinyBlur);
       };
 
       img.onerror = () => {
