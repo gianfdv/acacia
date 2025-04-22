@@ -1,22 +1,30 @@
-import video from "../assets/video2.mp4"
-
 const HeroSection = () => {
-  return (
-    <div className="flex flex-col mt-5 items-center">
+    return (
+      <div className="flex flex-col mt-5 items-center">
         <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center">
-            Beautiful weddings in
+          Beautiful weddings in
         </h1>
         <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center mt-3">
-            Costa Rica!
+          Costa Rica!
         </h1>
         <div className="flex mt-0 justify-center w-full h-[480px]">
-            <video autoPlay loop muted className="rounded-lg w-full h-full object-cover mx-2 my-2">
-                <source src={video} type="video/mp4"/>
-                Your browser does not support the video tag.
-            </video>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="rounded-lg w-full h-full object-cover mx-2 my-2"
+          >
+            <source
+              src="https://res.cloudinary.com/dxvkewdcn/video/upload/q_auto,f_auto,w_1920/videos/video2.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
         </div>
-    </div>
-  )
-}
-
-export default HeroSection;
+      </div>
+    );
+  };
+  
+  export default HeroSection;
+  
