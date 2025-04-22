@@ -20,6 +20,6 @@ export const albums = [
     { title: 'Jiya & Tony', folder: 'jiya-tony', note:"Playa Esterillos", link: '/album/jiya-tony', photographer: {name: "Chloe Murdoch", instagram: "https://www.instagram.com/chloemurdochphotography/"} },
     { title: 'Lital & Marty', folder: 'lital-marty', note:"Villa Caletas, Jacó", link: '/album/lital-marty', photographer: {name: "Rob & Lori", instagram: "https://www.instagram.com/rawshoots/"} },
     { title: 'Samantha & Michael', folder: 'samantha-michael', note:"Los Sueños, Herradura", link: '/album/samantha-michael', photographer: {name: "Rob & Lori", instagram: "https://www.instagram.com/rawshoots/"} },
-    //{ title: 'Bionca & Adrian', folder: 'bionca-adrian', note:"Villa Caletas, Jacó", link: '/album/bionca-adrian', photographer: {name: "Michelle Ellis", instagram: "https://www.instagram.com/bacalaofilms/"} },
-    //{ title: 'Courtney & Joe', folder: 'courtney-joe', note:"Los Sueños Marriott, Herradura", link: '/album/courtney-joe', photographer: {name: "El Velo", instagram: "https://www.instagram.com/elvelophotography/"} },
+    { title: 'Bionca & Adrian', folder: 'bionca-adrian', note:"Villa Caletas, Jacó", link: '/album/bionca-adrian', photographer: {name: "Michelle Ellis", instagram: "https://www.instagram.com/bacalaofilms/"} },
+    { title: 'Courtney & Joe', folder: 'courtney-joe', note:"Los Sueños Marriott, Herradura", link: '/album/courtney-joe', photographer: {name: "El Velo", instagram: "https://www.instagram.com/elvelophotography/"} },
   ];
