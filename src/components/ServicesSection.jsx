@@ -1,4 +1,5 @@
 import detailsImg from "../assets/details.jpg";
+import destination2 from "../assets/destination2.jpg";
 import { Link } from 'react-router-dom';
 
 const ServicesSection = () => {
@@ -24,7 +25,7 @@ const ServicesSection = () => {
         <Link to="/destination-wedding" className="w-full sm:w-1/2 lg:w-1/3 p-2">
           <div className="p-6 rounded-xl flex flex-col items-center text-center">
             <h1 className="text-2xl font-semibold mb-2 hover:text-[#0b3425]">Destination Wedding Experience</h1>
-            <img className="w-full h-80 object-cover rounded-lg" src={detailsImg} />
+            <img className="w-full h-80 object-cover rounded-lg" src={destination2} />
           </div>
         </Link>
 
