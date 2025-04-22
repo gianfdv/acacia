@@ -1,4 +1,4 @@
-import detailsImg from "../assets/details.jpg";
+import planning from "../assets/planning.jpg";
 import { FaInstagram} from "react-icons/fa";
 
 const DesignSection = () => {
@@ -34,7 +34,7 @@ const DesignSection = () => {
   <div className="p-2 w-full lg:w-2/5 flex justify-center lg:justify-start items-center">
     <img 
       className="h-[700px] rounded-lg" 
-      src={detailsImg} 
+      src={planning} 
       alt="Wedding Details" 
     />
   </div>
