@@ -1,4 +1,4 @@
-import detailsImg from "../assets/details.jpg";
+import destination from "../assets/destination.jpg";
 
 const DestinationSection = () => {
   return (
@@ -20,7 +20,7 @@ const DestinationSection = () => {
     <div className="p-2 w-full lg:w-2/5 flex justify-center lg:justify-start items-center">
       <img 
         className="h-[600px] rounded-lg" 
-        src={detailsImg} 
+        src={destination} 
         alt="Wedding Details" 
       />
     </div>
