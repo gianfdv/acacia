@@ -1,4 +1,3 @@
-import detailsImg from "../assets/details.jpg";
 
 const AboutSection = () => {
   return (
@@ -10,7 +9,7 @@ const AboutSection = () => {
       </div>
       <div className="p-2 w-full lg:w-1/2 flex justify-center lg:justify-start items-center">
         <img 
-          className="h-[400px] rounded-lg" src={detailsImg}/>
+          className="h-[400px] rounded-lg" src="https://res.cloudinary.com/dxvkewdcn/image/upload/q_auto,f_auto,w_1000/albums/lital-marty/image19.jpg"/>
       </div>
     </div>
   );
