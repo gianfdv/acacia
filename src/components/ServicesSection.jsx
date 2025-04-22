@@ -1,4 +1,3 @@
-import detailsImg from "../assets/details.jpg";
 import { Link } from 'react-router-dom';
 
 const ServicesSection = () => {
@@ -16,7 +15,7 @@ const ServicesSection = () => {
         <Link to="/wedding-planning-and-design" className="w-full sm:w-1/2 lg:w-1/3 p-2">
           <div className="p-6 rounded-xl flex flex-col items-center text-center">
             <h1 className="text-2xl font-semibold mb-2 hover:text-[#0b3425]">Wedding Planning & Design</h1>
-            <img className="w-full h-80 object-cover rounded-lg" src={"https://res.cloudinary.com/dxvkewdcn/image/upload/q_auto,f_auto,w_1000/albums/erica-austin/image49.jpg"} />
+            <img className="w-full h-80 object-cover rounded-lg" src="https://res.cloudinary.com/dxvkewdcn/image/upload/q_auto,f_auto,w_1000/albums/erica-austin/image49.jpg" />
           </div>
         </Link>
 
@@ -24,7 +23,7 @@ const ServicesSection = () => {
         <Link to="/destination-wedding" className="w-full sm:w-1/2 lg:w-1/3 p-2">
           <div className="p-6 rounded-xl flex flex-col items-center text-center">
             <h1 className="text-2xl font-semibold mb-2 hover:text-[#0b3425]">Destination Wedding Experience</h1>
-            <img className="w-full h-80 object-cover rounded-lg" src={"https://res.cloudinary.com/dxvkewdcn/image/upload/q_auto,f_auto,w_1000/albums/laura-arvidas/image8.jpg"} />
+            <img className="w-full h-80 object-cover rounded-lg" src="https://res.cloudinary.com/dxvkewdcn/image/upload/q_auto,f_auto,w_1000/albums/laura-arvidas/image8.jpg" />
           </div>
         </Link>
 
@@ -32,7 +31,7 @@ const ServicesSection = () => {
         <Link to="/elopements" className="w-full sm:w-1/2 lg:w-1/3 p-2">
           <div className="p-6 rounded-xl flex flex-col items-center text-center">
             <h1 className="text-2xl font-semibold mb-2 hover:text-[#0b3425]">Elopements</h1>
-            <img className="w-full h-80 object-cover rounded-lg" src={detailsImg} />
+            <img className="w-full h-80 object-cover rounded-lg" src="https://res.cloudinary.com/dxvkewdcn/image/upload/q_auto,f_auto,w_1000/albums/felicity-peter/image33.jpg" />
           </div>
         </Link>
 

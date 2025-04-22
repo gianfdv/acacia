@@ -16,7 +16,7 @@ const ElopementsSection = () => {
     <div className="p-2 w-full lg:w-2/5 flex justify-center lg:justify-start items-center">
       <img 
         className="h-[400px] rounded-lg" 
-        src={detailsImg} 
+        src="https://res.cloudinary.com/dxvkewdcn/image/upload/q_auto,f_auto,w_1000/albums/kelsey-gerald/image13.jpg" 
         alt="Wedding Details" 
       />
     </div>
