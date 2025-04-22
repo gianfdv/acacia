@@ -16,7 +16,7 @@ const HeroSection = () => {
             className="rounded-lg w-full h-full object-cover mx-2 my-2"
           >
             <source
-              src="https://res.cloudinary.com/dxvkewdcn/video/upload/q_auto,f_auto,w_1920/videos/video2.mp4"
+              src="https://res.cloudinary.com/dxvkewdcn/video/upload/q_80,f_auto,w_1920/hero/video2.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
