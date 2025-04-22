@@ -31,7 +31,7 @@ const ContactSection = () => {
   return (
     <StyledContactSection>
       <div className="left">
-        <img src="https://res.cloudinary.com/dxvkewdcn/image/upload/q_auto,f_auto,w_1000/albums/erika-austin/image46.jpg" alt="Contact"/>
+        <img src="https://res.cloudinary.com/dxvkewdcn/image/upload/q_auto,f_auto,w_1000/albums/erica-austin/image46.jpg" alt="Contact"/>
       </div>
       <div className="right">
         <form ref={form} onSubmit={sendEmail}>
