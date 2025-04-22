@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import styled from "styled-components";
-import detailsImg from "../assets/details.jpg";
 
 const ContactSection = () => {
   const form = useRef();
@@ -32,7 +31,7 @@ const ContactSection = () => {
   return (
     <StyledContactSection>
       <div className="left">
-        <img src={detailsImg} alt="Contact" />
+        <img src="https://res.cloudinary.com/dxvkewdcn/image/upload/q_auto,f_auto,w_1000/albums/erika-austin/image46.jpg" alt="Contact"/>
       </div>
       <div className="right">
         <form ref={form} onSubmit={sendEmail}>

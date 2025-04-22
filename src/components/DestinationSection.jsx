@@ -1,4 +1,3 @@
-import destination from "../assets/destination.jpg";
 
 const DestinationSection = () => {
   return (
@@ -20,7 +19,7 @@ const DestinationSection = () => {
     <div className="p-2 w-full lg:w-2/5 flex justify-center lg:justify-start items-center">
       <img 
         className="h-[600px] rounded-lg" 
-        src={destination} 
+        src="https://res.cloudinary.com/dxvkewdcn/image/upload/q_auto,f_auto,w_1000/albums/laura-arvidas/image55.jpg" 
         alt="Wedding Details" 
       />
     </div>

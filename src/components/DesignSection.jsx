@@ -1,4 +1,3 @@
-import planning from "../assets/planning.jpg";
 import { FaInstagram} from "react-icons/fa";
 
 const DesignSection = () => {
@@ -34,7 +33,7 @@ const DesignSection = () => {
   <div className="p-2 w-full lg:w-2/5 flex justify-center lg:justify-start items-center">
     <img 
       className="h-[700px] rounded-lg" 
-      src={planning} 
+      src="https://res.cloudinary.com/dxvkewdcn/image/upload/q_auto,f_auto,w_1000/albums/sam-adam/image1.jpg" 
       alt="Wedding Details" 
     />
   </div>
