@@ -38,7 +38,7 @@ const TeamSection = () => {
             <div className="p-6 rounded-xl flex flex-col sm:flex-row items-center text-center">
             <div className="sm:w-1/2 flex flex-col items-center">
                 <h1 className="p-2 text-3xl">Gianfranco D'Arsie</h1>
-                <p className="text-sm text-justify p-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p className="text-sm text-justify p-3">Is the practical, detail-driven force behind every wedding. From shaping ideas in planning meetings to overseeing every setup on-site — even from the top of a ladder or inside a pool — he ensures your vision comes to life. His hands-on approach and calm leadership make each celebration seamless and stress-free.</p>
             </div>
             <img className="sm:w-1/2 h-80 object-cover rounded-lg" src={detailsImg} />
             </div>
