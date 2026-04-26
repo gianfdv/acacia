@@ -26,6 +26,6 @@ export const albums = [
     { title: 'Kelsey & Gerald', folder: 'kelsey-gerald', note:"Villa Caletas, Jacó", link: '/album/kelsey-gerald', photographer: {name: "El Velo", instagram: "https://www.instagram.com/elvelophotography/"} },
     { title: 'Felicity & Peter', folder: 'felicity-peter', note:"Villa Caletas, Jacó", link: '/album/felicity-peter', photographer: {name: "El Velo", instagram: "https://www.instagram.com/elvelophotography/"} },
     { title: 'Brittany & Jonathan', folder: 'brittany-jonathan', note:"Villa Caletas, Jacó", link: '/album/brittany-jonathan', photographer: {name: "Francisco Molins", instagram: "https://www.instagram.com/franjmolins/"} },
-    { title: 'Editorial Wedding TW', folder: 'editorialwedding-tropicalwedding', note:"Jacó", link: '/album/editorialwedding-tropicalwedding', photographer: {name: "Maria Adelina Chacón", instagram: "https://www.instagram.com/tropicalweddings_cr/"} },
+    { title: 'Editorial Wedding TW', folder: 'editorialtw', note:"Jacó", link: '/album/editorialtw', photographer: {name: "Maria Adelina Chacón", instagram: "https://www.instagram.com/tropicalweddings_cr/"} },
     { title: 'Faith & Wyatt', folder: 'faith-wyatt', note:"Amor Arenal, Arenal", link: '/album/faith-wyatt', photographer: {name: "Papaya Wedding", instagram: "https://www.instagram.com/papayawedding/"} }
   ];
