@@ -12,6 +12,9 @@ export const albums = [
     { title: 'Ashley & Austin', folder: 'ashley-austin', note:"Villa Caletas, Jacó", link: '/album/ashley-austin', photographer: {name: "", instagram: ""} },
     { title: 'Erica & Austin', folder: 'erica-austin', note:"Parador Resort & Spa, Manuel Antonio", link: '/album/erica-austin', photographer: {name: "Javier Méndez", instagram: "https://www.instagram.com/javiermendezcr/"} },
     { title: 'Casey & Brian', folder: 'casey-brian', note:"Villa Caletas, Jacó", link: '/album/casey-brian', photographer: {name: "Mauricio Ureña", instagram: "https://www.instagram.com/photobymaug/"} },
+    { title: 'Editorial Wedding TW', folder: 'editorial-tw', note:"Jacó", link: '/album/editorial-tw', photographer: {name: "Maria Adelina Chacón", instagram: "https://www.instagram.com/tropicalweddings_cr/"} },
+    { title: 'Faith & Wyatt', folder: 'faith-wyatt', note:"Amor Arenal, Arenal", link: '/album/faith-wyatt', photographer: {name: "Papaya Wedding", instagram: "https://www.instagram.com/papayawedding/"} },
+    { title: 'Tracey & Jacob', folder: 'tracey-jacob', note:"Amor Arenal, Arenal", link: '/album/tracey-jacob', photographer: {name: "Adri & Lucas Photography", instagram: "https://www.instagram.com/adrimendezphotography/"} },
     { title: 'Mariana & Allen', folder: 'mariana-allen', note:"Terraza Linda Vista, San Ramón", link: '/album/mariana-allen', photographer: {name: "Tiquicia Shot", instagram: "https://www.instagram.com/tiquicia.shot.photo/"} },
     { title: 'Crystal & Abel', folder: 'crystal-abel', note:"Villa Caletas, Jacó", link: '/album/crystal-abel', photographer: {name: "El Velo", instagram: "https://www.instagram.com/elvelophotography/"} },
     { title: 'Laura & Arvidas', folder: 'laura-arvidas', note:"Playa Esterillos", link: '/album/laura-arvidas', photographer: {name: "Chloe Murdoch", instagram: "https://www.instagram.com/chloemurdochphotography/"} },
@@ -25,7 +28,5 @@ export const albums = [
     { title: 'Ashley & Kyle', folder: 'ashley-kyle', note:"Villa Caletas, Jacó", link: '/album/ashley-kyle', photographer: {name: "El Velo", instagram: "https://www.instagram.com/elvelophotography/"} },
     { title: 'Kelsey & Gerald', folder: 'kelsey-gerald', note:"Villa Caletas, Jacó", link: '/album/kelsey-gerald', photographer: {name: "El Velo", instagram: "https://www.instagram.com/elvelophotography/"} },
     { title: 'Felicity & Peter', folder: 'felicity-peter', note:"Villa Caletas, Jacó", link: '/album/felicity-peter', photographer: {name: "El Velo", instagram: "https://www.instagram.com/elvelophotography/"} },
-    { title: 'Brittany & Jonathan', folder: 'brittany-jonathan', note:"Villa Caletas, Jacó", link: '/album/brittany-jonathan', photographer: {name: "Francisco Molins", instagram: "https://www.instagram.com/franjmolins/"} },
-    { title: 'Editorial Wedding TW', folder: 'editorial-tw', note:"Jacó", link: '/album/editorial-tw', photographer: {name: "Maria Adelina Chacón", instagram: "https://www.instagram.com/tropicalweddings_cr/"} },
-    { title: 'Faith & Wyatt', folder: 'faith-wyatt', note:"Amor Arenal, Arenal", link: '/album/faith-wyatt', photographer: {name: "Papaya Wedding", instagram: "https://www.instagram.com/papayawedding/"} }
+    { title: 'Brittany & Jonathan', folder: 'brittany-jonathan', note:"Villa Caletas, Jacó", link: '/album/brittany-jonathan', photographer: {name: "Francisco Molins", instagram: "https://www.instagram.com/franjmolins/"} }
   ];
